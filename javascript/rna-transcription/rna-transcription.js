@@ -1,4 +1,4 @@
-var rnaComplement = {
+const rnaComplement = {
   'G': 'C',
   'C': 'G',
   'T': 'A',
@@ -9,11 +9,11 @@ var DnaTranscriber = function() {};
 
 
 DnaTranscriber.prototype.toRna = function(dna) {
-  return dna.split('').map(function(nucleotide) {
-    if (!rnaComplement[nucleotide]) {
+  return dna.split('').map(function(base) {
+    if (!rnaComplement[base]) {
       throw new Error('Invalid input');
     }
-    return rnaComplement[nucleotide];
+    return rnaComplement[base];
   }).join('');
 };
 
